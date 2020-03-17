@@ -1,7 +1,6 @@
 import React from 'react'
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { SCREEN } from '../../constants'
-import { navigateTo } from '../../helpers/Navigation'
 import { withNavigation } from 'react-navigation'
 import { categories } from '../../data/categories'
 
@@ -9,6 +8,7 @@ import { categories } from '../../data/categories'
 
 
 const Category = ({navigation}) => {
+
     return (
         <View style={styles.wrapper}>
 
@@ -19,10 +19,17 @@ const Category = ({navigation}) => {
                 keyExtractor={categories => categories.category}
                 data={categories} 
                 renderItem={( {item} ) => {
-                    console.log("ITEM: ", item.category);
-                    return <View>
-                            <TouchableOpacity onPress={()=> {navigation.navigate(SCREEN.CATEGORY_RESULTS)}}>
-                                <Text style={styles.listtext}>{item.category} - {item.difficulty}</Text>
+                    return <View style={styles.categorytouchable}>
+                            <TouchableOpacity onPress={()=> {
+                                navigation.navigate({
+                                    routeName: SCREEN.CATEGORY_RESULTS, 
+                                    params: {
+                                        categoryName: item.category
+                                    }
+                                })
+                            }}>
+
+                            <Text style={styles.listtext}>{item.category} Calories - {item.calories}</Text>
                             </TouchableOpacity>
                     </View>
                 }}            
@@ -37,6 +44,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    categorytouchable: {
+        width: '50%',
+    },
     listtext: {
         flex: 1,
         backgroundColor: 'rgba(255,255,255, .5)',
@@ -47,7 +57,8 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         marginHorizontal: 10,
         marginTop: 25,
-        minHeight: 40,  
+        minHeight: 40,
+
     },          
 });
 

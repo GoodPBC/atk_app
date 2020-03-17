@@ -10,7 +10,7 @@ const CategoryScreen = ({navigation}) => {
             <Text>Category Screen</Text>
             <Category />
 
-            {/* <Button title="Category Screen Button" onPress={()=> navigateTo(navigation, SCREEN.CATEGORY_RESULTS)}/> */}
+            {/* <Button title="GO TO CATEGORY SCREEN" onPress={()=> navigateTo(navigation, SCREEN.CATEGORY_RESULTS)}/> */}
         </View>
     )
 }

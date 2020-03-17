@@ -23,8 +23,8 @@ import {ScanSvg, HomeSvg, HomeWhiteSvg, CollectionSvg, ProfileSvg, ProfileWhiteS
 const Home_Stack = createStackNavigator({
     [SCREEN.HOME]:HomeScreen,
 }, {
-    initialRouteName: 'ATK APP',
     headerMode: 'none',
+    initialRouteName: 'ATK APP',
 
 });
 
@@ -58,6 +58,7 @@ const APP_TABS =  createBottomTabNavigator(
                     focused ? <ScheduleWhiteSvg/> :
                     <ScheduleSvg/>
                 ),
+                headerTitle: 'Filter',
                 tabBarLabel: 'Filter',
 
             },

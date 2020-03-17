@@ -8,12 +8,13 @@ const CategoryResultsScreen = ({navigation}) => {
     
     const currentCategory = navigation.getParam('categoryName')
     
-    console.log(`CURRENT CATEGORY SCREEN: ${currentCategory}`);
-    console.log(`$curl https://api.edamam.com/search?q=chicken&app_id=45875a4b&app_key=d8babbfadb933db33efb3d454940ce0`);
+    console.log(`${currentCategory} Screen`);
+
+    
     return (
         <View style={styles.wrapper}>
             <Text>Category Results Screen</Text>
-            <CategoryResult />
+            <CategoryResult title={currentCategory}/>
             <Button title="GO TO RESULT DETAIL SCREEN" onPress={()=> navigateTo(navigation, SCREEN.CATEGORY_RESULT_ITEM)}/>
         </View>
     )

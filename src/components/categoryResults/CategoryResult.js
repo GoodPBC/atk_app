@@ -1,10 +1,10 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, TouchableOpacity, StyleSheet, Text, View } from 'react-native'
 
-const CategoryResult = () => {
+const CategoryResult = props => {
     return (
         <View style={styles.wrapper}>
-            <Text>CategoryResult Component</Text>
+            <Text>{props.title}</Text>
         </View>
     )
 }

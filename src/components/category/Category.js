@@ -2,10 +2,7 @@ import React from 'react'
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { SCREEN } from '../../constants'
 import { withNavigation } from 'react-navigation'
-import { categories } from '../../data/categories'
-
-
-
+import { categories, Q_STRING, API_HELPER } from '../../data/categories'
 
 const Category = ({navigation}) => {
 

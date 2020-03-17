@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const Category = () => {
+
+const Category = props => {
     return (
         <View style={styles.wrapper}>
             <Text>Category Component</Text>

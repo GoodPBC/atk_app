@@ -1,12 +1,15 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 import CategoryResult from '../components/categoryResults/CategoryResult'
+import { SCREEN } from '../constants'
+import {navigateTo} from '../helpers/Navigation';
 
-const CategoryResultsScreen = () => {
+const CategoryResultsScreen = ({navigation}) => {
     return (
         <View style={styles.wrapper}>
             <Text>Category Results Screen</Text>
             <CategoryResult />
+            <Button title="Category Result Screen Button" onPress={()=> navigateTo(navigation, SCREEN.CATEGORY_RESULT_ITEM)}/>
         </View>
     )
 }

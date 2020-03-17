@@ -23,8 +23,8 @@ import {ScanSvg, HomeSvg, HomeWhiteSvg, CollectionSvg, ProfileSvg, ProfileWhiteS
 const Home_Stack = createStackNavigator({
     [SCREEN.HOME]:HomeScreen,
 }, {
-    initialRouteName: 'HOME',
-    headerMode: 'screen',
+    initialRouteName: 'ATK APP',
+    headerMode: 'none',
 
 });
 
@@ -35,8 +35,19 @@ const APP_TABS =  createBottomTabNavigator(
             navigationOptions: {
                 tabBarIcon: ({focused}) => (
                     focused ? <HomeWhiteSvg/>: <HomeSvg/>
-                ),
-                tabBarLabel: 'Home',
+                    ),
+                    tabBarLabel: 'Home',
+                    
+                },
+        },
+        [SCREEN.SCREEN_CATEGORY]: {
+            screen: CategoryScreen,
+            navigationOptions: {
+                tabBarIcon: ({focused, tintColor}) => {
+                    return (
+                        focused ? <CollectionWhiteSvg/> : <CollectionSvg/>
+                )},
+                tabBarLabel: 'Category',
 
             },
         },
@@ -59,17 +70,6 @@ const APP_TABS =  createBottomTabNavigator(
                     <ScheduleSvg/>
                 ),
                 tabBarLabel: 'Favorite',
-
-            },
-        },
-        [SCREEN.SCREEN_CATEGORY]: {
-            screen: CategoryScreen,
-            navigationOptions: {
-                tabBarIcon: ({focused, tintColor}) => {
-                    return (
-                        focused ? <CollectionWhiteSvg/> : <CollectionSvg/>
-                )},
-                tabBarLabel: 'Category',
 
             },
         },
@@ -100,7 +100,7 @@ const AppNavigator =  createStackNavigator({
     [SCREEN.HOME]: APP_TABS,
 }, {
     initialRouteName: SCREEN.HOME,
-    headerMode: 'none',
+    headerMode: 'screen',
 });
 
 export default createAppContainer(AppNavigator)
